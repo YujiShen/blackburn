@@ -1,3 +1,8 @@
 {{ with .Site.Params.brand }}
-  <a class="pure-menu-heading brand" href="/">{{ . | safeHTML }}</a>
+    <div id="brand">
+  <a class="pure-menu-heading brand" href="/">
+  <span>{{ . | safeHTML }}</span> &middot;
+  <span><i class="fa fa-connectdevelop fa-2x"></i></span>
+  </a>
+  </div>
 {{ end }}

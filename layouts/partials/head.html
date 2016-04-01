@@ -4,7 +4,7 @@
   <meta name="description" content="{{ if .IsNode }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ else }}{{ with .Description }}{{ . }}{{ end }}{{ end }}">
   {{.Hugo.Generator}}
 
-  <title>{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}</title>
+  <title>{{ if .IsHome }} {{ .Site.Params.author }} &middot; {{ .Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Params.author }}{{ end }}</title>
 
   <!-- CSS -->
   {{ $purecss := "https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/" }}
@@ -30,16 +30,20 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+
+<!-- Latex -->
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}index.xml" />
 
-  {{ with .Site.Params.highlightjs }}
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/{{ . }}.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  {{ end }}
+  <link href="/css/prism.css" rel="stylesheet" />
+  <script src="/js/prism.js">Prism.highlightAll(false); //false means not async</script>
+  
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
   {{ partial "favicon.html" . }}
 
