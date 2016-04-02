@@ -78,17 +78,7 @@ h2,
 h3 {
     line-height: 1.5;
 }
-.content article header h2 {
-    font-weight:normal;
-    border: none;
-    line-height: 1;
-}
-.content article header h2 a {
-    color: #b58900;
-}
-.content article header h2 a:hover {
-    color: #268bd2;
-}
+
 blockquote {
     color: #839496;
     display: flex;
@@ -175,7 +165,10 @@ i {
     color: #073642;
 }
 
-::selection,
+::selection {
+    background: #9DE92B;
+}
+
 ::-moz-selection {
-    background: #eee8d5;
+    background: #9DE92B;
 }
