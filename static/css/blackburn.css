@@ -174,3 +174,8 @@ i {
 .pagination a {
     color: #073642;
 }
+
+::selection,
+::-moz-selection {
+    background: #eee8d5;
+}
