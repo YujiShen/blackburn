@@ -113,7 +113,9 @@ blockquote p {
 }
 .post-meta {
     font-size: 90%;
+    line-height: 1.5em;
 }
+
 article > footer {
     text-align: right;
 }
@@ -142,6 +144,10 @@ article > footer {
     display: inline-block;
     vertical-align: middle;
 }
+#logo {
+    height: 35px;
+}
+
 #menu .brand {
     font-family: "Source Code Pro";
     font-weight: bold;
