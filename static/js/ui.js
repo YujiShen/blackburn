@@ -1,7 +1,7 @@
-(function (window, document) {
+(function(window, document) {
 
-    var layout   = document.getElementById('layout'),
-        menu     = document.getElementById('menu'),
+    var layout = document.getElementById('layout'),
+        menu = document.getElementById('menu'),
         menuLink = document.getElementById('menuLink');
 
     function toggleClass(element, className) {
@@ -9,11 +9,11 @@
             length = classes.length,
             i = 0;
 
-        for(; i < length; i++) {
-          if (classes[i] === className) {
-            classes.splice(i, 1);
-            break;
-          }
+        for (; i < length; i++) {
+            if (classes[i] === className) {
+                classes.splice(i, 1);
+                break;
+            }
         }
         // The className is not found
         if (length === classes.length) {
@@ -23,7 +23,7 @@
         element.className = classes.join(' ');
     }
 
-    menuLink.onclick = function (e) {
+    menuLink.onclick = function(e) {
         var active = 'active';
 
         e.preventDefault();

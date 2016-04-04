@@ -1,10 +1,13 @@
+
+@import url("font.css");
+/*@import url("http://fonts.googleapis.com/earlyaccess/notosanssc.css");*/
 html {
-    font-family: '-apple-system', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-family: Roboto, 'Noto Sans SC', '-apple-system', 'HelveticaNeue', Helvetica, 'Mirosoft Yahei', Arial, sans-serif;
 }
 
 body {
     background-color: #fdf6e3;
-    color: #586e75;
+    color: #657b83;
 }
 
 hr {
@@ -47,7 +50,7 @@ h6 {
 }
 h1 {
     font-size: 1.7em;
-    font-weight: 800;
+    font-weight: 700;
     border-bottom: 3px double #ddd;
 }
 h2 {
@@ -57,20 +60,20 @@ h2 {
 }
 h3 {
     font-size: 1.3em;
-    font-weight: 700;
+    font-weight: 500;
     border-bottom: 2px solid #ddd;
 }
 h4 {
     font-size: 1.1em;
-    font-weight: 600;
+    font-weight: 500;
 }
 h5 {
     font-size: 1em;
-    font-weight: 600;
+    font-weight: 500;
 }
 h6 {
     font-size: 1em;
-    font-weight: 500;
+    font-weight: 400;
     color: #859900;
 }
 h1,
@@ -79,27 +82,47 @@ h3 {
     line-height: 1.5;
 }
 
+strong {
+   color: #586e75;
+ }
+em {
+   color: #586e75;
+ }
+
 blockquote {
-    color: #839496;
-    display: flex;
-    display: -webkit-flex;
-    flex-direction: row;
-    -webkit-flex-direction: row;
-    margin: 1.5em 1em 1.5em 0;
-    -webkit-margin: 1.5em 1em 1.5em 0;
+/*font-weight: 300;*/
+/*font-family: "Rotobo Slab", serif;*/
+margin: 0.25em 0;
+padding: 1em 3.5em 0.25em 3.5em;
+line-height: 1.4;
+position: relative;
+color: #839496;
 }
 blockquote:before {
-    display: block;
-    content: "\201C";
-    font-size: 3em;
-    font-weight: bold;
-    margin-top: 0.1em;
-    font-family: times;
+display: block;
+content: "\201C";
+font-size: 4em;
+/*font-family: serif;*/
+font-weight: bold;
+position: absolute;
+left: 0;
+top: -0.25em;
+/*color: #839496;*/
 }
 blockquote p {
-    display: block;
-    margin-left: 0.5em;
+    margin: 0.5em auto;
 }
+blockquote cite {
+font-size: 0.9em;
+font-style: normal;
+display: block;
+margin-top: 0.1em;
+text-align: right;
+}
+blockquote cite:before {
+content: "\2014 \2009";
+}
+
 .copyright {
     font-size: 0.85em;
     padding: 1em;
@@ -115,7 +138,9 @@ blockquote p {
     font-size: 90%;
     line-height: 1.5em;
 }
-
+.content > .post-meta{
+    margin-bottom: 1em;
+}
 article > footer {
     text-align: right;
 }
@@ -149,7 +174,7 @@ article > footer {
 }
 
 #menu .brand {
-    font-family: "Source Code Pro";
+    font-family: "Roboto Mono";
     font-weight: bold;
     text-transform: none;
     background: transparent;

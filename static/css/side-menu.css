@@ -58,13 +58,15 @@ The content `<div>` is where all your content goes.
     margin: 0.5em auto;
     padding: 0 2em;
     max-width: 800px;
+    text-align: center;
 }
 
 .header h1 {
     color: #d33682;
     border: none;
     font-size: 2em;
-    /*letter-spacing: 0.1em;*/
+    font-weight: 700;
+    font-family: "Roboto Slab", "Noto Sans SC", serif;
     line-height:1.1;
     margin:1em auto 0.2em auto;
     max-width: 800px;
@@ -72,18 +74,17 @@ The content `<div>` is where all your content goes.
 
 .header h2 {
     color: #93a1a1;
-    font-weight: 300;
-    font-style: italic;
-    /*letter-spacing: 0.1em;*/
+    font-weight:300;
     border:none;
-    font-family: times;
+    font-family: Roboto, "Noto Sans SC";
     margin:0;
     line-height: 1.1;
 }
 
 .content article header h2 {
+    font-family: "Roboto Slab", serif;
     font-size: 1.5em;
-    font-weight: medium;
+    font-weight: 700;
     color: #93a1a1;
     border: none;
     margin: 1em 0 0.5em 0;
