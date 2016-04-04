@@ -76,13 +76,12 @@ The content `<div>` is where all your content goes.
     color: #93a1a1;
     font-weight:300;
     border:none;
-    font-family: Roboto, "Noto Sans SC";
     margin:0;
     line-height: 1.1;
 }
 
 .content article header h2 {
-    font-family: "Roboto Slab", serif;
+    font-family: "Roboto Slab", "Noto Sans SC", serif;
     font-size: 1.5em;
     font-weight: 700;
     color: #93a1a1;

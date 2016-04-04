@@ -45,7 +45,7 @@ pre.line-numbers {
 
 pre.line-numbers > code {
     /*padding-left: 0.5em;*/
-    overflow-x: scroll;
+    overflow-x: auto;
     order: 2;
     display: block;
     margin-left: 2.3em;

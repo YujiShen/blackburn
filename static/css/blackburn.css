@@ -1,6 +1,7 @@
-
 @import url("font.css");
+
 /*@import url("http://fonts.googleapis.com/earlyaccess/notosanssc.css");*/
+
 html {
     font-family: Roboto, 'Noto Sans SC', '-apple-system', 'HelveticaNeue', Helvetica, 'Mirosoft Yahei', Arial, sans-serif;
 }
@@ -20,20 +21,25 @@ a:visited {
     color: #268bd2;
     text-decoration: none;
 }
+
 a:hover {
     color: #6c71c4;
 }
+
 .post-meta {
     color: #93a1a1 !important;
 }
+
 .post-taxonomy-topic,
 .post-taxonomy-tag {
     color: #93a1a1 !important;
 }
+
 .post-taxonomy-topic:hover,
 .post-taxonomy-tag:hover {
     color: #268bd2 !important;
 }
+
 h1,
 h2,
 h3,
@@ -48,34 +54,41 @@ h6 {
     margin-top: 0.7em;
     margin-bottom: 0.7em;
 }
+
 h1 {
     font-size: 1.7em;
     font-weight: 700;
     border-bottom: 3px double #ddd;
 }
+
 h2 {
     font-size: 1.5em;
     font-weight: 700;
     border-bottom: 3px double #ddd;
 }
+
 h3 {
     font-size: 1.3em;
     font-weight: 500;
     border-bottom: 2px solid #ddd;
 }
+
 h4 {
     font-size: 1.1em;
     font-weight: 500;
 }
+
 h5 {
     font-size: 1em;
     font-weight: 500;
 }
+
 h6 {
     font-size: 1em;
     font-weight: 400;
     color: #859900;
 }
+
 h1,
 h2,
 h3 {
@@ -83,44 +96,46 @@ h3 {
 }
 
 strong {
-   color: #586e75;
- }
+    color: #586e75;
+}
+
 em {
-   color: #586e75;
- }
+    color: #586e75;
+}
 
 blockquote {
-/*font-weight: 300;*/
-/*font-family: "Rotobo Slab", serif;*/
-margin: 0.25em 0;
-padding: 1em 3.5em 0.25em 3.5em;
-line-height: 1.4;
-position: relative;
-color: #839496;
+    margin: 0.25em 0;
+    padding: 1em 3.5em 0.25em 3.5em;
+    line-height: 1.4;
+    position: relative;
+    color: #839496;
 }
+
 blockquote:before {
-display: block;
-content: "\201C";
-font-size: 4em;
-/*font-family: serif;*/
-font-weight: bold;
-position: absolute;
-left: 0;
-top: -0.25em;
-/*color: #839496;*/
+    display: block;
+    content: "\201C";
+    font-size: 4em;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: -0.25em;
+    /*color: #839496;*/
 }
+
 blockquote p {
     margin: 0.5em auto;
 }
+
 blockquote cite {
-font-size: 0.9em;
-font-style: normal;
-display: block;
-margin-top: 0.1em;
-text-align: right;
+    font-size: 0.9em;
+    font-style: normal;
+    display: block;
+    margin-top: 0.1em;
+    text-align: right;
 }
+
 blockquote cite:before {
-content: "\2014 \2009";
+    content: "\2014 \2009";
 }
 
 .copyright {
@@ -128,22 +143,32 @@ content: "\2014 \2009";
     padding: 1em;
     color: #93a1a1;
 }
+
 .copyright div {
     margin-bottom: 0.3em;
 }
+
+ small {
+    font-family: Roboto, 'Noto Sans SC', '-apple-system', 'HelveticaNeue', Helvetica, 'Mirosoft Yahei', Arial, sans-serif;
+ }
+
 .copyright a {
     color: #657b83 !important;
 }
+
 .post-meta {
     font-size: 90%;
     line-height: 1.5em;
 }
-.content > .post-meta{
+
+.content > .post-meta {
     margin-bottom: 1em;
 }
+
 article > footer {
     text-align: right;
 }
+
 .prev-next-post {
     margin-top: 2em;
     padding-top: 2em;
@@ -151,16 +176,19 @@ article > footer {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 }
+
 .prev-next-post .prev {
     float: left;
     text-align: left;
     overflow: hidden;
 }
+
 .prev-next-post .next {
     float: right;
     text-align: right;
     overflow: hidden;
 }
+
 #brand {
     display: inline-block;
 }
@@ -169,6 +197,7 @@ article > footer {
     display: inline-block;
     vertical-align: middle;
 }
+
 #logo {
     height: 35px;
 }
@@ -181,17 +210,21 @@ article > footer {
     text-decoration: none;
     margin: 0.5em 0;
 }
+
 #menu .pure-menu {
     font-size: 0.9em;
 }
+
 i {
     display: inline-block;
     margin-right: 0.2em;
 }
+
 .pagination {
     text-align: center;
     margin-top: 3em;
 }
+
 .pagination a {
     color: #073642;
 }
