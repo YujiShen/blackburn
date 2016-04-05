@@ -21,10 +21,10 @@
   <link rel="stylesheet" href="/css/side-menu-old-ie.css">
   {{ "<![endif]-->" | safeHTML }}
   {{ "<!--[if gt IE 8]><!-->" | safeHTML }}
-  <link rel="stylesheet" href="/css/side-menu.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/side-menu.css">
   {{ "<!--<![endif]-->" | safeHTML }}
-
-  <link rel="stylesheet" href="/css/blackburn.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/font.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/blackburn.css">
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -34,16 +34,16 @@
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script> -->
 <script type="text/javascript"
-  src="../../MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="http://yuji.im/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}index.xml" />
 
-  <link href="/css/prism.css" rel="stylesheet" />
-  <script src="/js/prism.js">Prism.highlightAll(false);</script>
+  <link href="{{ .Site.BaseURL }}/css/prism.css" rel="stylesheet" />
+  <script src="{{ .Site.BaseURL }}/js/prism.js">Prism.highlightAll(false);</script>
 
-  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="{{ .Site.BaseURL }}/img/apple-touch-icon.png">
 
   {{ partial "favicon.html" . }}
 

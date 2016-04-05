@@ -1,8 +1,6 @@
-{{ with .Site.Params.brand }}
-    <div id="brand">
-  <a class="pure-menu-heading brand" href="/">
-  <span><img id="logo" src="/img/logo.svg"></span>
-  <span>{{ . | safeHTML }}</span>
-  </a>
-  </div>
-{{ end }}
+<div id="brand">
+    <a class="pure-menu-heading brand" href="/">
+        <span><img id="logo" src="{{ .Site.BaseURL }}/img/logo.svg"></span>
+        <span>{{ .Site.Params.brand }}</span>
+    </a>
+</div>
