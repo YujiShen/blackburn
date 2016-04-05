@@ -44,7 +44,6 @@ pre.line-numbers {
 }
 
 pre.line-numbers > code {
-    /*padding-left: 0.5em;*/
     overflow-x: auto;
     order: 2;
     display: block;
@@ -85,7 +84,7 @@ pre.line-numbers > code {
 
 :not(pre) > code {
     background-color: #fbf1d3;
-    font-family: "Roboto Mono", "Source Code Pro", Monaco, Consolas;
+    font-family: "Roboto Mono", "Source Code Pro", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     color: #dc322f;
     font-size: 0.9em;
     padding: 0.1em 0.3em;

@@ -1,6 +1,6 @@
 
 html {
-    font-family: Roboto, 'Noto Sans SC', '-apple-system', 'HelveticaNeue', Helvetica, 'Mirosoft Yahei', Arial, sans-serif;
+    font-family: Roboto, /*'Noto Sans SC', */ '-apple-system', 'HelveticaNeue', Helvetica, Arial, "PingFang SC", 'Microsoft Yahei', sans-serif;
 }
 
 body {
@@ -146,7 +146,7 @@ blockquote cite:before {
 }
 
  small {
-    font-family: Roboto, 'Noto Sans SC', '-apple-system', 'HelveticaNeue', Helvetica, 'Mirosoft Yahei', Arial, sans-serif;
+    font-family: Roboto, /*'Noto Sans SC', */ '-apple-system', 'HelveticaNeue', Helvetica, Arial,  "PingFang SC", 'Microsoft Yahei', sans-serif;
  }
 
 .copyright a {
@@ -168,10 +168,11 @@ article > footer {
 
 .prev-next-post {
     margin-top: 2em;
-    padding-top: 2em;
+    padding-top: 2.5em;
     padding-bottom: 2em;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
+    line-height: 1.2;
 }
 
 .prev-next-post .prev {
@@ -200,7 +201,7 @@ article > footer {
 }
 
 #menu .brand {
-    font-family: "Roboto Mono";
+    font-family: "Roboto Mono", monospace;
     font-weight: bold;
     text-transform: none;
     background: transparent;

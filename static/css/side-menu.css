@@ -66,7 +66,7 @@ The content `<div>` is where all your content goes.
     border: none;
     font-size: 2em;
     font-weight: 700;
-    font-family: "Roboto Slab", "Noto Sans SC", serif;
+    font-family: "Roboto Slab", '-apple-system', 'HelveticaNeue', Helvetica, Arial, "PingFang SC", 'Microsoft Yahei', sans-serif;
     line-height:1.1;
     margin:1em auto 0.2em auto;
     max-width: 800px;
@@ -81,13 +81,13 @@ The content `<div>` is where all your content goes.
 }
 
 .content article header h2 {
-    font-family: "Roboto Slab", "Noto Sans SC", serif;
+    font-family: "Roboto Slab", '-apple-system', 'HelveticaNeue', Helvetica, Arial, "PingFang SC", 'Microsoft Yahei', sans-serif;
     font-size: 1.5em;
     font-weight: 700;
     color: #93a1a1;
     border: none;
     margin: 1em 0 0.5em 0;
-    line-height: 1;
+    line-height: 1.1;
 }
 .content article header h2 a {
     color: #b58900;
