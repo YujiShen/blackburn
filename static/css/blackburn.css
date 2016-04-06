@@ -178,6 +178,7 @@ article > footer {
     float: left;
     text-align: left;
     overflow: hidden;
+    margin-left: 0.4em;
 }
 
 .prev-next-post .next {
