@@ -1,6 +1,15 @@
 </div>
 </div>
 <script src="/js/ui.js"></script>
+<script type="text/javascript">
+    (function() {
+        var css = document.createElement('link');
+        css.href = 'http://yuji.im/static/font-awesome/css/font-awesome.min.css';
+        css.rel = 'stylesheet';
+        css.type = 'text/css';
+        document.getElementsByTagName('head')[0].appendChild(css);
+    })();
+</script>
 {{ partial "google_analytics.html" . }}
 
 </body>

@@ -116,7 +116,6 @@ blockquote:before {
     position: absolute;
     left: 0;
     top: -0.25em;
-    /*color: #839496;*/
 }
 
 blockquote p {
@@ -201,7 +200,6 @@ article > footer {
 }
 
 #menu .brand {
-    font-family: "Roboto Mono", monospace;
     font-weight: bold;
     text-transform: none;
     background: transparent;
