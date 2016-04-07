@@ -167,8 +167,8 @@ article > footer {
 
 .prev-next-post {
     margin-top: 2em;
-    padding-top: 2.5em;
-    padding-bottom: 2em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
     line-height: 1.2;
@@ -178,12 +178,14 @@ article > footer {
     float: left;
     text-align: left;
     overflow: hidden;
+    margin-left: 0.2em;
 }
 
 .prev-next-post .next {
     float: right;
     text-align: right;
     overflow: hidden;
+    margin-right: 0.2em;
 }
 
 #brand {
@@ -213,7 +215,7 @@ article > footer {
 
 i {
     display: inline-block;
-    margin-right: 0.2em;
+    margin-right: 0.3em;
 }
 
 .pagination {
@@ -222,9 +224,21 @@ i {
 }
 
 .pagination a {
-    color: #073642;
+    color: #268bd2;
 }
-
+#disqus_thread {
+    margin-top: 1.5em;
+}
+#disqus-comments {
+    text-align:center;
+}
+#disqus-comments button {
+    margin: 1.5em auto;
+    background: #268bd2;
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
 ::selection {
     background: #9DE92B;
 }

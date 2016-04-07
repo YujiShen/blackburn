@@ -47,7 +47,7 @@ The content `<div>` is where all your content goes.
 */
 
 .content {
-    margin: 2em auto;
+    margin: 2em auto 1em auto;
     padding: 0 2em;
     max-width: 800px;
     line-height: 1.6em;
