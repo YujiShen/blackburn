@@ -1,7 +1,7 @@
 
 <div id="disqus_thread"></div>
 <div id="disqus-comments"><button class='pure-button' onclick="loaddisqus()"><i class='icon-chat'></i> <span class="disqus-comment-count" data-disqus-url="{{ .Permalink }}"> <!-- Count will be inserted here --> </span></button></div>
-
+{{ .Permalink }}
 <script type="text/javascript">
 function loaddisqus() {
     // Don't ever inject Disqus on localhost--it creates unwanted

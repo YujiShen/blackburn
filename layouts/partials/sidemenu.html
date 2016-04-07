@@ -26,15 +26,21 @@
     </div>
     <div class="pure-menu">
         <ul class="pure-menu-list">
-            <li class="pure-menu-item">
-                <a class="pure-menu-link" href="/about/"><i class='icon-user'></i>About</a>
-            </li>
-            <li class="pure-menu-item">
-                <a class="pure-menu-link" href="/portfolio/"><i class='icon-suitcase'></i>Portfolio</a>
-            </li>
-            <li class="pure-menu-item">
-                <a class="pure-menu-link" href="/resume/"><i class='icon-file'></i>Resume</a>
-            </li>
+            {{ range .Site.Menus.intro }} {{ if .HasChildren }}
+            <li class="pure-menu-item pure-menu-has-children">
+                <a class="pure-menu-link" href="#">{{ .Pre }}{{ .Name }}</a>
+                <ul class="pure-menu-children">
+                    {{ range .Children }}
+                    <li class="pure-menu-item">
+                        <a href="{{ .URL }}">{{ .Name }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+                {{else}}
+                <li class="pure-menu-item">
+                    <a class="pure-menu-link" href="{{ .URL }}">{{ .Pre }}{{ .Name }}</a> {{end}}
+                </li>
+                {{end}}
         </ul>
     </div>
     {{ partial "social.html" . }} {{ partial "copyright.html" . }}
