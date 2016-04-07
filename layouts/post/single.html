@@ -8,6 +8,13 @@
 
   {{ partial "post_meta.html" . }}
 
+  {{ if not .Params.notoc }}
+    <div id="toc" class="pure-u-2-5">
+    {{ .TableOfContents }}
+    </div>
+  {{ end }}
+
+
   {{ .Content }}
 
   {{ partial "prev_next_post.html" . }}

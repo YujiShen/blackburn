@@ -1,13 +1,13 @@
 
 <div id="disqus_thread"></div>
 <div id="disqus-comments"><button class='pure-button' onclick="loaddisqus()"><i class='icon-chat'></i> <span class="disqus-comment-count" data-disqus-url="{{ .Permalink }}"> <!-- Count will be inserted here --> </span></button></div>
-{{ .Permalink }}
+
 <script type="text/javascript">
 function loaddisqus() {
     // Don't ever inject Disqus on localhost--it creates unwanted
     // discussions from 'localhost:1313' on your Disqus account...
-    //if (window.location.hostname == "localhost")
-    //    return;
+    if (window.location.hostname == "localhost")
+       return;
 
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     var disqus_shortname = '{{ .Site.Params.disqus }}';
@@ -17,5 +17,5 @@ function loaddisqus() {
     loadbutton.parentNode.removeChild(loadbutton);
 }
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<!-- <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a> -->
