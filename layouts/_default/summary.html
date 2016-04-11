@@ -12,7 +12,7 @@
 
   {{ if .Truncated }}
   <footer>
-    <a href="{{ .RelPermalink }}">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+    <a href="{{ .RelPermalink }}">{{ if eq .Site.Params.locale "en-US" }}Read more{{end}}{{ if eq .Site.Params.locale "zh-Hans" }}阅读更多{{end}}<i class="fa fa-angle-double-right fa-fw"></i></a>
   </footer>
   {{ end }}
 </article>
