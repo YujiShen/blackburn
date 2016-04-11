@@ -2,14 +2,6 @@
 </div>
 </div>
 <script type="text/javascript">
-// Menu
-// function toggle_menu() {
-//     var nav = document.querySelector('#nav');
-//     var nav_link = document.querySelector('#nav-link');
-//     nav.classList.toggle('active');
-//     nav_link.classList.toggle('active');
-// };
-// TOC
 window.onload = function() {
     var toc = document.querySelector('#toc');
     var toc_toggle_link = document.querySelector('#toc_toggle_link');
@@ -58,7 +50,7 @@ window.onload = function() {
 };
 </script>
 {{ partial "google_analytics.html" . }}
-<script id="dsq-count-scr" src="//yujishen.disqus.com/count.js" async></script>
+<script id="dsq-count-scr" src="//{{ .Site.Params.disqus }}.disqus.com/count.js" async></script>
 </body>
 
 </html>
