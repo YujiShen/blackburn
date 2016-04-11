@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 <div id="content-wrapper">
 <div id="header" class="header">
-  <h1>{{ .Title }}</h1>
+  <h1>{{ if eq .Site.Params.locale "en-US" }}Archive{{end}}{{ if eq .Site.Params.locale "zh-Hans" }}归档{{end}}</h1>
 </div>
 <div class="content">
   {{ range .Data.Pages.GroupByDate "2006" }}
