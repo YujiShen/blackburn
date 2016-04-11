@@ -700,7 +700,11 @@ Add transition to containers so they can push in and out.
         margin-bottom: 1em;
     }
 }
-
+@media (max-width: 350px) {
+    #content-wrapper {
+        min-height: calc(100vh - 7em);
+    }
+}
 @media (max-height: 420px) {
     #nav.active {
         height: 100%;
