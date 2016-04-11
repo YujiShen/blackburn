@@ -1,47 +1,101 @@
-<!-- Menu toggle -->
-<a href="#menu" id="menuLink" class="menu-link">
-    <!-- Hamburger icon -->
-    <span></span>
-</a>
-<div id="menu">
+<div id="nav">
     {{ partial "brand.html" . }}
-    <div class="pure-menu">
-        <ul class="pure-menu-list">
-            {{ range .Site.Menus.main }} {{ if .HasChildren }}
-            <li class="pure-menu-item pure-menu-has-children">
-                <a class="pure-menu-link" href="#">{{ .Pre }}{{ .Name }}</a>
-                <ul class="pure-menu-children">
-                    {{ range .Children }}
+    <a href="#nav" id="nav-link" class="nav-link"><span></span></a>
+    <div class="nav-inner">
+        <div id="nav-nav">
+            <div id="top">
+                <a href="#header" class="pure-u-1-3  pure-menu-link"><i class="icon-up"></i></a>
+            </div>
+            <div id="left-toc-right">
+                <!-- Left -->
+                {{ if .IsHome }}
+                <!-- Must define Paginator before use it! -->
+                {{ $Paginator := .Paginate (where .Data.Pages "Type" "post") }} 
+                {{ if .Paginator.HasPrev }}
+                <a href="{{ .Paginator.Prev.URL }}" class="pure-u-1-3 pure-menu-link"><i class="icon-left"></i></a> 
+                {{ else }}
+                <a href="" class="unlink pure-u-1-3 pure-menu-link"><i class="icon-left"></i></a> 
+                {{ end }} 
+                {{ else if .IsPage }} 
+                {{ if .PrevInSection }} 
+                <a href="{{ .PrevInSection.Permalink }}" class="pure-u-1-3 pure-menu-link"><i class="icon-left"></i></a> 
+                {{ else }}
+                <a href="" class="unlink pure-u-1-3 pure-menu-link"><i class="icon-left"></i></a> 
+                {{ end }} 
+                {{ else }}
+                <a href="" class="unlink pure-u-1-3 pure-menu-link"><i class="icon-left"></i></a> 
+                {{ end }}
+                
+                <!-- TOC -->
+                {{ if or (.IsNode) (.Params.notoc) }}
+                <a href="#toc" id="toc_toggle_link" class="unlink pure-u-1-3  pure-menu-link"><i class="icon-list"></i></a> {{ else }}
+                <a href="#toc" id="toc_toggle_link" class="pure-u-1-3  pure-menu-link"><i class="icon-list"></i></a> {{ end }}
+                
+                <!-- Right -->
+                {{ if .IsHome}} 
+                    {{ if .Paginator.HasNext }}
+                    <a href="{{ .Paginator.Next.URL }}" class="pure-u-1-3 pure-menu-link"><i class="icon-right"></i></a> 
+                    {{ else }}
+                    <a href="" class="unlink pure-u-1-3 pure-menu-link"><i class="icon-right"></i></a> 
+                    {{end}}
+                {{ else if .IsPage }} 
+                    {{ if .NextInSection }} 
+                    <a href="{{ .NextInSection.Permalink }}" class="pure-u-1-3 pure-menu-link"><i class="icon-right"></i></a> 
+                    {{ else }}
+                    <a href="" class="unlink pure-u-1-3 pure-menu-link"><i class="icon-right"></i></a> 
+                    {{end}} 
+                {{ else }}
+                <a href="" class="unlink pure-u-1-3 pure-menu-link"><i class="icon-right"></i></a> 
+                {{ end }}
+            </div>
+            <div id="bottom">
+                <a href="#copyright" class="pure-u-1-3 pure-menu-link"><i class="icon-down"></i></a>
+            </div>
+        </div>
+        <div class="pure-menu blog-item">
+            <ul class="pure-menu-list">
+                {{ range .Site.Menus.main }} {{ if .HasChildren }}
+                <li class="pure-menu-item pure-menu-has-children">
+                    <a class="pure-menu-link" href="#">{{ .Pre }}{{ .Name }}</a>
+                    <ul class="pure-menu-children">
+                        {{ range .Children }}
+                        <li class="pure-menu-item">
+                            <a href="{{ .URL }}">{{ .Name }}</a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                    {{else}}
                     <li class="pure-menu-item">
-                        <a href="{{ .URL }}">{{ .Name }}</a>
+                        <a class="pure-menu-link" href="{{ .URL }}">{{ .Pre }} {{ .Name }}</a> {{end}}
                     </li>
-                    {{ end }}
-                </ul>
-                {{else}}
-                <li class="pure-menu-item">
-                    <a class="pure-menu-link" href="{{ .URL }}">{{ .Pre }}{{ .Name }}</a> {{end}}
-                </li>
-                {{end}}
-        </ul>
-    </div>
-    <div class="pure-menu">
-        <ul class="pure-menu-list">
-            {{ range .Site.Menus.intro }} {{ if .HasChildren }}
-            <li class="pure-menu-item pure-menu-has-children">
-                <a class="pure-menu-link" href="#">{{ .Pre }}{{ .Name }}</a>
-                <ul class="pure-menu-children">
-                    {{ range .Children }}
+                    {{end}}
+            </ul>
+        </div>
+        <div class="pure-menu self-item">
+            <ul class="pure-menu-list">
+                {{ range .Site.Menus.intro }} {{ if .HasChildren }}
+                <li class="pure-menu-item pure-menu-has-children">
+                    <a class="pure-menu-link" href="#">{{ .Pre }}{{ .Name }}</a>
+                    <ul class="pure-menu-children">
+                        {{ range .Children }}
+                        <li class="pure-menu-item">
+                            <a href="{{ .URL }}">{{ .Name }}</a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                    {{else}}
                     <li class="pure-menu-item">
-                        <a href="{{ .URL }}">{{ .Name }}</a>
+                        <a class="pure-menu-link" href="{{ .URL }}">{{ .Pre }} {{ .Name }}</a>{{end}}
                     </li>
-                    {{ end }}
-                </ul>
-                {{else}}
-                <li class="pure-menu-item">
-                    <a class="pure-menu-link" href="{{ .URL }}">{{ .Pre }}{{ .Name }}</a> {{end}}
-                </li>
-                {{end}}
-        </ul>
+                    {{end}}
+            </ul>
+        </div>
+        <div class="pure-menu social">
+            {{ with .Site.Social.github }}
+            <a class="pure-u-1-3 pure-menu-link" href="https://github.com/{{ . }}" target="_blank"><i class="icon-github-squared"></i></a> {{ end }} {{ with .Site.Social.linkedin }}
+            <a class="pure-u-1-3 pure-menu-link" href="https://linkedin.com/in/{{ . }}" target="_blank"><i class="icon-linkedin-squared"></i></a> {{ end }}
+            <a class="pure-u-1-3 pure-menu-link" href="{{ .Site.BaseURL }}index.xml"><i class="icon-rss-squared"></i></a>
+        </div>
+        <!-- {{ partial "social.html" . }} -->
     </div>
-    {{ partial "social.html" . }} {{ partial "copyright.html" . }}
 </div>

@@ -1,6 +1,7 @@
 {{ partial "header.html" . }}
 
-<div class="header">
+<div id="content-wrapper">
+<div id="header" class="header">
   <h1>{{ .Title }}</h1>
 </div>
 
@@ -9,5 +10,5 @@
     {{ .Render "summary"}}
   {{ end }}
 </div>
-
+</div>
 {{ partial "footer.html" . }}

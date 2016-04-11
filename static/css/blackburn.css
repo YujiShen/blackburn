@@ -1,4 +1,9 @@
-
+html, body, #layout, #nav, #main {
+    padding:0;
+    margin:0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
 html {
     font-family: Roboto, /*'Noto Sans SC', */ '-apple-system', 'HelveticaNeue', Helvetica, Arial, "PingFang SC", 'Microsoft Yahei', sans-serif;
 }
@@ -6,15 +11,6 @@ html {
 body {
     background-color: #fdf6e3;
     color: #657b83;
-}
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ddd;
-    margin: 1em 0;
-    padding: 0; 
 }
 
 a,
@@ -28,42 +24,258 @@ a:hover {
     color: #6c71c4;
 }
 
-.post-meta {
-    color: #93a1a1 !important;
+/*
+ * -- LAYOUT STYLES --
+ * This layout consists of three main elements, `#nav` (navigation bar), `#list` (email list), and `#main` (email content). All 3 elements are within `#layout`
+ */
+
+/* Make the navigation 100% width on phones */
+
+#nav {
+    font-family: "Roboto Mono";
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background: #002b36;
+    text-align: center;
+    font-size: 0.9em;
 }
-#toc a,
+
+
+/* Show the "Menu" button on phones */
+
+#nav .nav-link {
+    display: block;
+    top: 0;
+    right: 0;
+    position: absolute;
+    font-size: 9px;
+    width: 25px;
+    height: auto;
+    padding: 2.1em 1.6em;
+}
+
+.nav-link span {
+    position: relative;
+    display: block;
+    text-align: left;
+}
+
+.nav-link span,
+.nav-link span:before,
+.nav-link span:after {
+    background-color: #B9AC95;
+    width: 100%;
+    height: 2px;
+}
+
+.nav-link span:before,
+.nav-link span:after {
+    position: absolute;
+    margin-top: -0.8em;
+    content: " ";
+}
+
+.nav-link span:after {
+    margin-top: 0.8em;
+}
+
+.nav-link:hover span,
+.nav-link:hover span:before,
+.nav-link:hover span:after,
+.nav-link:focus span,
+.nav-link:focus span:before,
+.nav-link:focus span:after {
+    background-color: #fdf6e3;
+}
+
+.nav-link.active span {
+    background: transparent;
+}
+
+.nav-link.active span:before {
+    -webkit-transform: rotate(45deg) translate(.5em, .5em);
+    -moz-transform: rotate(45deg) translate(.5em, .5em);
+    -ms-transform: rotate(45deg) translate(.5em, .5em);
+    -o-transform: rotate(45deg) translate(.5em, .5em);
+    transform: rotate(45deg) translate(.5em, .5em);
+}
+
+.nav-link.active span:after {
+    -webkit-transform: rotate(-45deg) translate(.6em, -.6em);
+    -moz-transform: rotate(-45deg) translate(.6em, -.6em);
+    -ms-transform: rotate(-45deg) translate(.6em, -.6em);
+    -o-transform: rotate(-45deg) translate(.6em, -.6em);
+    transform: rotate(-45deg) translate(.6em, -.6em);
+}
+
+
+/* When "Menu" is clicked, the navbar should be 80% height */
+
+#nav.active {
+    height: 420px;
+}
+
+
+/* Don't show the navigation items... */
+
+.nav-inner {
+    display: none;
+}
+
+
+/* ...until the "Menu" button is clicked */
+
+#nav.active .nav-inner {
+    display: block;
+    overflow-y: scroll;
+}
+
+
+/* Nav style*/
+
+#brand {
+    margin-top: 7px;
+    display: inline-block;
+}
+
+#logo {
+    height: 25px;
+}
+
+#nav a {
+    color: #B9AC95;
+    border: none;
+}
+
+#nav .pure-menu,
+#nav .pure-menu ul {
+    border: none;
+    background: transparent;
+    /*padding: 0.1em 1em;*/
+}
+
+#nav .pure-menu {
+    font-size: 0.9em;
+    border-top: 1px solid #B9AC95;
+    padding: 0.2em 0;
+}
+
+
+#nav .pure-menu-link {
+    padding: 0.5em 0;
+}
+
+#nav .pure-menu-link:hover,
+#nav .pure-menu-link:focus {
+    background: #B58900;
+    color: #fdf6e3;
+}
+
+#nav-nav {
+    border-top: 1px solid #B9AC95;
+}
+
+#top,
+#bottom {
+    display: flex;
+    justify-content: center;
+}
+
+#left-toc-right .pure-menu-link,
+#top .pure-menu-link,
+#bottom .pure-menu-link {
+    padding: 0.3em 0;
+}
+
+.unlink {
+    pointer-events: none;
+    color: #657b83 !important;
+}
+
+.social,
+#left-toc-right {
+    display: flex;
+}
+
+.social i,
+#nav-nav i {
+    font-size: 1.3em;
+}
+
+
+/* Table of Contents*/
+
+#toc {
+    display: none;
+    position: fixed;
+    top: 30px;
+    z-index: 1;
+    overflow-y: auto;
+    max-height: 100%;
+    width: 100%;
+}
+
+#TableOfContents {
+    background: rgba(0, 43, 54, 0.9);
+    font-size: 0.9em;
+    padding: 1em;
+}
+
+#toc a {
+    color: #B9AC95;
+    display: block;
+}
+
+#toc ul {
+    padding-left: 1em;
+    margin: 0;
+    line-height: 1.5em;
+}
+
+#toc li {
+    color: #B9AC95;
+}
+
+#toc.active {
+    display: block;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 1em 0;
+    padding: 0; 
+}
+
+
+.post-meta,
+.post-meta a {
+    color: #93a1a1;
+}
+
 .post-taxonomy-topic,
 .post-taxonomy-tag {
-    color: #93a1a1 !important;
+    color: #93a1a1;
 }
 #toc a:hover,
 .post-taxonomy-topic:hover,
 .post-taxonomy-tag:hover {
-    color: #268bd2 !important;
+    color: #268bd2;
 }
 
-#toc {
-    display: block;
-    font-size: 0.8em;
-    float: right;
-    border-radius: 5px;
-    background: #fdf6e3;
-    border-left: 1em solid #fdf6e3;
-    border-bottom: 1em solid #fdf6e3;
-}
-#TableOfContents{
-    padding: 0.5em 0 0.5em 1em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-#toc ul {
-    padding-left: 1.1em;
-    margin: 0;
-    line-height: 1.5em;
-}
-#toc li {
-    list-style-type: decimal;
-    color: #93a1a1;
+
+
+.header {
+    margin: 0 auto;
+    padding: 1em 0 0 0;
+    text-align: center;
+    max-width: 800px;
+
 }
 
 h1,
@@ -73,51 +285,64 @@ h4,
 h5,
 h6 {
     color: #b58900;
-    -webkit-margin-top: 0.7em;
-    -webkit-margin-bottom: 0.7em;
-    -moz-margin-top: 0.7em;
-    -moz-margin-bottom: 0.7em;
-    margin-top: 0.7em;
-    margin-bottom: 0.7em;
+    margin: 0.67em 0;
+    line-height: 1.45;
+    font-family: "Roboto Slab", '-apple-system', "PingFang SC", 'Microsoft Yahei', serif;
+    font-weight: 700;
 }
 
 h1 {
-    font-size: 1.7em;
-    font-weight: 700;
-    border-bottom: 3px double #ddd;
+    color: #d33682;
+    font-size: 2em;
 }
 h2 {
     font-size: 1.5em;
-    font-weight: 700;
     border-bottom: 2px solid #ddd;
 }
 
 h3 {
     font-size: 1.3em;
-    font-weight: 500;
     border-bottom: 1px solid #ddd;
 }
 
 h4 {
     font-size: 1.1em;
-    font-weight: 500;
 }
 
 h5 {
     font-size: 1em;
-    font-weight: 500;
 }
 
 h6 {
     font-size: 1em;
-    font-weight: 400;
     color: #859900;
 }
 
-h1,
-h2,
-h3 {
-    line-height: 1.5;
+.content article header h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #93a1a1;
+    border: none;
+}
+
+.content {
+    margin: 0 auto;
+    padding: 0 2em;
+    max-width: 800px;
+    line-height: 1.6em;
+}
+
+
+.content article header h2 a {
+    color: #b58900;
+}
+
+.content article header h2 a:hover {
+    color: #268bd2;
+}
+
+article {
+    padding: 1em 0;
 }
 
 strong {
@@ -162,27 +387,36 @@ blockquote cite {
 blockquote cite:before {
     content: "\2014 \2009";
 }
-
-.copyright {
-    font-size: 0.85em;
-    padding: 1em;
-    color: #93a1a1;
+/* 40px for fixed bar */
+#main {
+    padding-top: 40px;
 }
 
-.copyright div {
-    margin-bottom: 0.3em;
+#content-wrapper {
+    min-height: calc(100vh - 40px - 3.5em);
+}
+#copyright {
+    max-width: 800px;
+    padding: 0 2em;
+    font-size: 0.9em;
+    color: #93a1a1;
+    margin: 1em auto 2em auto;
+    line-height: 1.3em;
+    text-align: center;
+    height: 1em;
 }
 
  small {
-    font-family: Roboto, /*'Noto Sans SC', */ '-apple-system', 'HelveticaNeue', Helvetica, Arial,  "PingFang SC", 'Microsoft Yahei', sans-serif;
+    font-family: "Roboto Mono", monospace;
  }
 
-.copyright a {
-    color: #657b83 !important;
+#copyright a {
+    color: #657b83;
 }
 
 .post-meta {
-    font-size: 90%;
+    font-size: 0.9em;
+    font-family: "Roboto Mono";
     line-height: 1.7;
 }
 
@@ -191,6 +425,7 @@ blockquote cite:before {
 }
 
 article > footer {
+    font-family: "Roboto Mono", monospace;
     text-align: right;
 }
 
@@ -217,39 +452,10 @@ article > footer {
     margin-right: 0.2em;
 }
 
-#brand {
-    display: inline-block;
-}
-
-#brand span {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-#logo {
-    height: 35px;
-}
-
-#menu .brand {
-    font-weight: bold;
-    text-transform: none;
-    background: transparent;
-    text-decoration: none;
-    margin: 0.5em 0;
-}
-
-#menu .pure-menu {
-    font-size: 0.9em;
-}
-
-i {
-    display: inline-block;
-    margin-right: 0.3em;
-}
-
 .pagination {
     text-align: center;
     margin-top: 3em;
+    font-family: "Roboto Mono";
 }
 
 .pagination a {
@@ -274,4 +480,234 @@ i {
 
 ::-moz-selection {
     background: #9DE92B;
+}
+
+/* Sidebar Style */
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+
+#layout {
+    /*position: relative;*/
+    padding-left: 0;
+}
+
+#layout.active #nav {
+    left: 100px;
+    width: 100px;
+}
+
+#layout.active .nav-link {
+    left: 100px;
+}
+
+
+/*
+ * -- TABLET (AND UP) MEDIA QUERIES --
+ * On tablets and other medium-sized devices, we want to customize some
+ * of the mobile styles.
+ */
+
+@media (min-width: 40em) {
+    /* Move the layout over so we can fit the nav + list in on the left */
+    #layout {
+        padding-left: 100px;
+        /* "left col (nav + list)" width */
+        position: static;
+    }
+    /* These are position:fixed; elements that will be in the left 500px of the screen */
+    #nav {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        /*text-align: left;*/
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    #nav {
+        margin-left: -100px;
+        /* "left col (nav + list)" width */
+        width: 100px;
+        height: 100%;
+        /*padding: 2em 0;*/
+    }
+    /* Show the menu items on the larger screen */
+    .nav-inner {
+        display: block;
+        /*position: absolute;*/
+        /*bottom: 0;*/
+    }
+    /* Hide the "Menu" button on larger screens */
+    #nav .nav-link {
+        display: none;
+    }
+    #brand {
+        margin: 3em 0;
+    }
+    #logo {
+        height: 40px;
+    }
+    #nav .pure-menu,
+    #nav .pure-menu ul {
+        padding: 0.1em 0;
+    }
+    #layout,
+    #nav {
+        -o-transition-property: none;
+        -moz-transition-property: none;
+        -ms-transition-property: none;
+        -webkit-transition-property: none;
+        transition-property: none;
+    }
+    .nav-inner .blog-item,
+    .nav-inner .self-item,
+    .nav-inner .social {
+        -webkit-animation: none;
+        -moz-animation: none;
+        -o-animation: none;
+        -ms-animation: none;
+        animation: none;
+    }
+    #toc {
+        top: 0;
+        left: 100px;
+        width: auto;
+    }
+    #TableOfContents {
+        padding: 2em;
+    }
+    #nav .pure-menu-link {
+        padding: 1em 0;
+    }
+    #left-toc-right .pure-menu-link,
+    #top .pure-menu-link,
+    #bottom .pure-menu-link {
+        padding: 0.5em 0;
+    }
+    /* Footer positon */
+    #main {
+        padding-top: 0;
+    }
+    #content-wrapper {
+        min-height: calc(100vh - 3em);
+    }
+    #copyright {
+        margin-bottom: 1em;
+    }
+}
+
+@media (max-height: 420px) {
+    #nav.active {
+        height: 100%;
+    }
+    #nav.active .nav-inner {
+        display: block;
+        height: 80%;
+        overflow-y: scroll;
+    }
+}
+
+/* Animation */
+
+/*
+Add transition to containers so they can push in and out.
+*/
+
+#layout,
+#nav {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+#toc {
+    animation: fadein 0.3s;
+    -moz-animation: fadein 0.3s;
+    /* Firefox */
+    -webkit-animation: fadein 0.3s;
+    /* Safari and Chrome */
+    -o-animation: fadein 0.3s;
+}
+
+.nav-inner .blog-item {
+    animation: fadein 0.6s;
+    -moz-animation: fadein 0.6s;
+    /* Firefox */
+    -webkit-animation: fadein 0.6s;
+    /* Safari and Chrome */
+    -o-animation: fadein 0.6s;
+    /* Opera */
+}
+
+.nav-inner .self-item {
+    animation: fadein 0.8s;
+    -moz-animation: fadein 0.8s;
+    /* Firefox */
+    -webkit-animation: fadein 0.8s;
+    /* Safari and Chrome */
+    -o-animation: fadein 0.8s;
+    /* Opera */
+}
+
+.nav-inner .social {
+    animation: fadein 1s;
+    -moz-animation: fadein 1s;
+    /* Firefox */
+    -webkit-animation: fadein 1s;
+    /* Safari and Chrome */
+    -o-animation: fadein 1s;
+    /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Firefox */
+@-moz-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Opera */
+@-o-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

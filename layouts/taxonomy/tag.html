@@ -1,13 +1,10 @@
 {{ partial "header.html" . }}
-
-<div class="header">
-  <h1>{{ .Title }}</h1>
+<div id="content-wrapper">
+    <div id="header" class="header">
+        <h1>{{ .Title }}</h1>
+    </div>
+    <div class="content">
+        {{ range .Data.Pages }} {{ .Render "summary"}} {{ end }}
+    </div>
 </div>
-
-<div class="content">
-  {{ range .Data.Pages }}
-    {{ .Render "summary"}}
-  {{ end }}
-</div>
-
 {{ partial "footer.html" . }}

@@ -1,44 +1,64 @@
+{{ partial "copyright.html" . }}
 </div>
 </div>
-
 <script type="text/javascript">
-    (function(window, document) {
-
-    var layout = document.getElementById('layout'),
-        menu = document.getElementById('menu'),
-        menuLink = document.getElementById('menuLink');
-
-    function toggleClass(element, className) {
-        var classes = element.className.split(/\s+/),
-            length = classes.length,
-            i = 0;
-
-        for (; i < length; i++) {
-            if (classes[i] === className) {
-                classes.splice(i, 1);
-                break;
+// Menu
+// function toggle_menu() {
+//     var nav = document.querySelector('#nav');
+//     var nav_link = document.querySelector('#nav-link');
+//     nav.classList.toggle('active');
+//     nav_link.classList.toggle('active');
+// };
+// TOC
+window.onload = function() {
+    var toc = document.querySelector('#toc');
+    var toc_toggle_link = document.querySelector('#toc_toggle_link');
+    var nav = document.querySelector('#nav');
+    var nav_link = document.querySelector('#nav-link');
+    var mq = window.matchMedia( "(min-width: 40em)" );
+    // Navigation
+    nav_link.onclick = function(e) {
+        e.stopPropagation();
+        nav.classList.toggle('active');
+        nav_link.classList.toggle('active');
+        if (toc.classList.contains('active')) {
+                    toc.classList.toggle('active');
+            }
+    }
+    // TOC
+    if (!(toc === null)) {
+        var toc_links = toc.getElementsByTagName('a');
+        toc_toggle_link.onclick = function(e) {
+            e.stopPropagation();
+            toc.classList.toggle('active');
+            if (!mq.matches) {
+                nav.classList.toggle('active');
+                nav_link.classList.toggle('active');    
             }
         }
-        // The className is not found
-        if (length === classes.length) {
-            classes.push(className);
+        toc.onclick = function(e) {
+            e.stopPropagation();
+            toc.classList.toggle('active');
         }
-
-        element.className = classes.join(' ');
+        // If click outside of target and it is active, make it inactive
+        document.onclick = function(e) {
+            if (e.target.id != 'toc' && e.target.id != 'toc_toggle_link') {
+                if (toc.classList.contains('active')) {
+                    toc.classList.toggle('active');
+                }
+            }
+            if (e.target.id != 'nav' && e.target.id != 'nav-link') {
+                if (nav.classList.contains('active')) {
+                    nav.classList.toggle('active');
+                    nav_link.classList.toggle('active');
+                }
+            }
+        }
     }
-
-    menuLink.onclick = function(e) {
-        var active = 'active';
-
-        e.preventDefault();
-        toggleClass(layout, active);
-        toggleClass(menu, active);
-        toggleClass(menuLink, active);
-    };
-
-}(this, this.document));
+};
 </script>
 {{ partial "google_analytics.html" . }}
 <script id="dsq-count-scr" src="//yujishen.disqus.com/count.js" async></script>
 </body>
+
 </html>
