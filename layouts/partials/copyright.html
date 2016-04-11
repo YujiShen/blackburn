@@ -1,5 +1,5 @@
 <div id="copyright">
-  <!-- <hr> -->
+  {{ if eq .Site.Params.locale "en-US" }}
   <span>
     <small>{{ .Site.Copyright | safeHTML }}<a href="/"> {{ .Site.Params.author | safeHTML }} | </a></small>
   </span>
@@ -12,4 +12,19 @@
   <span>
     <small>Color Scheme<a href="http://ethanschoonover.com/solarized" target="_blank"> Solarized</a></small>
   </span>
+  {{ end }}
+  {{ if eq .Site.Params.locale "zh-Hans" }}
+  <span>
+    <small>{{ .Site.Copyright | safeHTML }}<a href="/"> {{ .Site.Params.author | safeHTML }} | </a></small>
+  </span>
+  <span>
+    <small><a href="https://gohugo.io/" target="_blank">Hugo驱动 | </a></small>
+  </span>
+  <span>
+    <small><a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank"> Blackburn主题 | </a></small>
+  </span>
+  <span>
+    <small><a href="http://ethanschoonover.com/solarized" target="_blank"> Solarized配色</a></small>
+  </span>
+  {{ end }}
 </div>
