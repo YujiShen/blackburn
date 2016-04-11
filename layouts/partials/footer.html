@@ -21,7 +21,7 @@ window.onload = function() {
         e.stopPropagation();
         nav.classList.toggle('active');
         nav_link.classList.toggle('active');
-        if (toc.classList.contains('active')) {
+        if (toc && toc.classList.contains('active')) {
                     toc.classList.toggle('active');
             }
     }
