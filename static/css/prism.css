@@ -26,16 +26,17 @@ pre[class*="language-"] {
 /* Code blocks */
 
 pre[class*="language-"] {
-    font-size: 0.9em;
-    line-height: 1.5;
+    font-size: 0.87em;
+    line-height: 1.45;
     /*margin: .5em 0;*/
-    border: 2px solid #eee8d5;
-    border-radius: 0.1em;
+    border-top: 5px solid #eee8d5;
+     border-bottom: 5px solid #eee8d5;
+     border-right: 5px solid #eee8d5;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-    background-color: #fdf6e3;
+    background-color: #eee8d5;
 }
 
 pre.line-numbers {
@@ -47,7 +48,7 @@ pre.line-numbers > code {
     overflow-x: auto;
     order: 2;
     display: block;
-    margin-left: 2.3em;
+    margin-left: 3em;
 }
 
 .line-numbers .line-numbers-rows {
@@ -63,7 +64,8 @@ pre.line-numbers > code {
     order: 1;
     position: absolute;
     top: 0;
-    width: 2em;
+    width: 2.5em;
+    border-right: 1px solid #ddd;
 }
 
 .line-numbers-rows > span {
@@ -76,17 +78,17 @@ pre.line-numbers > code {
     color: #ADBBBB;
     display: block;
     text-align: right;
-    padding-right: 0.4em;
+    padding-right: 0.8em;
 }
 
 
 /* Inline code */
 
 :not(pre) > code {
-    background-color: #fbf1d3;
+    background-color: #eee8d5;
     font-family: "Roboto Mono", "Source Code Pro", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    color: #dc322f;
-    font-size: 0.9em;
+    color: #586e75;
+    font-size: 0.87em;
     padding: 0.1em 0.3em;
     border-radius: .3em;
 }

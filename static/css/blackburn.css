@@ -5,12 +5,14 @@ html, body, #layout, #nav, #main {
     -webkit-margin-after: 0;
 }
 html {
-    font-family: Roboto, /*'Noto Sans SC', */ '-apple-system', 'HelveticaNeue', Helvetica, Arial, "PingFang SC", 'Microsoft Yahei', sans-serif;
+    font-family: Roboto, /*'Noto Sans SC', */ '-apple-system', 'HelveticaNeue', Helvetica, Arial, "PingFang SC", 'Microsoft Yahei', sans-serif; 
+    font-size: 16px;
 }
 
 body {
     background-color: #fdf6e3;
     color: #657b83;
+    line-height: 1.6;
 }
 
 a,
@@ -115,7 +117,7 @@ a:hover {
 /* When "Menu" is clicked, the navbar should be 80% height */
 
 #nav.active {
-    height: 420px;
+    height: 450px;
 }
 
 
@@ -278,35 +280,49 @@ hr {
 
 }
 
+ .header h1 {
+    color: #859900;
+     font-family: "Roboto Slab";
+     text-align: center;
+     font-weight: bold;
+     font-size: 2.25em;
+     line-height: 1.2;
+     border: none;
+ }
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    color: #b58900;
-    margin: 0.67em 0;
-    line-height: 1.45;
+    color: #d33682;
+    margin: 1em 0;
+     line-height: 1.4;
     font-family: "Roboto Slab", '-apple-system', "PingFang SC", 'Microsoft Yahei', serif;
     font-weight: 700;
 }
 
 h1 {
-    color: #d33682;
-    font-size: 2em;
+    padding-bottom: 0.3em;
+     font-size: 2.25em;
+     line-height: 1.2;
+     border-bottom: 1px solid #ddd;
 }
 h2 {
-    font-size: 1.5em;
-    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.3em;
+     font-size: 1.75em;
+     line-height: 1.225;
+     border-bottom: 1px solid #ddd;
 }
 
 h3 {
-    font-size: 1.3em;
-    border-bottom: 1px solid #ddd;
+    font-size: 1.5em;
+     line-height: 1.43;
 }
 
 h4 {
-    font-size: 1.1em;
+    font-size: 1.25em;
 }
 
 h5 {
@@ -315,14 +331,14 @@ h5 {
 
 h6 {
     font-size: 1em;
-    color: #859900;
+    color: #b58900;
 }
 
 .content article header h2 {
-    font-size: 1.5em;
-    font-weight: 700;
-    color: #93a1a1;
     border: none;
+     font-size: 1.75em;
+     line-height: 1.225;
+     margin-bottom: 0.5em;
 }
 
 .content {
@@ -334,7 +350,7 @@ h6 {
 
 
 .content article header h2 a {
-    color: #b58900;
+    color: #d33682;
 }
 
 .content article header h2 a:hover {
@@ -393,7 +409,8 @@ blockquote cite:before {
 }
 
 #content-wrapper {
-    min-height: calc(100vh - 40px - 3.5em);
+    min-height: calc(100vh - 40px - 4.5em);
+    padding-bottom: 1em; 
 }
 #copyright {
     max-width: 800px;
@@ -424,10 +441,11 @@ blockquote cite:before {
     margin-bottom: 1em;
 }
 
-article > footer {
+article > footer, article > footer a {
     font-family: "Roboto Mono", "PingFang SC", 'Microsoft Yahei', san-serif;
     text-align: right;
 }
+
 
 .prev-next-post {
     margin-top: 2em;
@@ -694,7 +712,7 @@ Add transition to containers so they can push in and out.
         padding-top: 0;
     }
     #content-wrapper {
-        min-height: calc(100vh - 3em);
+        min-height: calc(100vh - 4em);
     }
     #copyright {
         margin-bottom: 1em;
